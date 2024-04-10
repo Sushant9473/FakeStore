@@ -15,20 +15,21 @@ public class FakeStoreProductService implements ProductService{
 
     @Override
     public Product getProductById(Long id) {
-        RestTemplate restTemplate = new RestTemplate();
-        FakeStoreProductDto fakeStoreProductDto =
-                restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
-                        FakeStoreProductDto.class);
-        if(fakeStoreProductDto == null){
-            return null;
-        }
-        Product product = new Product();
-        product.setId(fakeStoreProductDto.getId());
-        product.setTitle(fakeStoreProductDto.getTitle());
-        product.setDescription(fakeStoreProductDto.getDescription());
-        product.setImage(fakeStoreProductDto.getImage());
-
-        return product;
+        throw new RuntimeException();
+//        RestTemplate restTemplate = new RestTemplate();
+//        FakeStoreProductDto fakeStoreProductDto =
+//                restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
+//                        FakeStoreProductDto.class);
+//        if(fakeStoreProductDto == null){
+//            return null;
+//        }
+//        Product product = new Product();
+//        product.setId(fakeStoreProductDto.getId());
+//        product.setTitle(fakeStoreProductDto.getTitle());
+//        product.setDescription(fakeStoreProductDto.getDescription());
+//        product.setImage(fakeStoreProductDto.getImage());
+//
+//        return product;
     }
 
     @Override
